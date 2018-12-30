@@ -13,4 +13,7 @@ export class AccordionComponent implements OnInit {
   ngOnInit() {
   }
 
+  isFirstOpen: boolean = true;
+  customClass: string = 'customClass';
+
 }
