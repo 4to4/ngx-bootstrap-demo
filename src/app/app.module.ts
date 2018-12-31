@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { AccordionModule } from "ngx-bootstrap/accordion";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
+import { AlertsComponent } from './alerts/alerts.component';
+import { AlertModule } from "ngx-bootstrap/alert";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccordionComponent
+    AccordionComponent,
+    AlertsComponent,    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccordionModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    AlertModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
