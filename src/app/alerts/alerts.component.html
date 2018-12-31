@@ -1,0 +1,34 @@
+<div class="container-fluid" style="padding: 10px;">
+  <div class="row">
+    <div class="col-md-12">
+      <b>Alerts:</b>
+      <div class="jumbotron" style="padding: 5px;">
+        <alert type="success">
+          Alert of type "success". <a href="http://www.success.com" class="alert-link"> success.com </a>
+        </alert>
+        <alert type="info">
+          Alert of type "info". <a href="http://www.info.com" class="alert-link">Info.com</a>
+        </alert>
+        <alert type="warning">
+          Alert of type "warning". <a href="http://www.warning.com" class="alert-link">warning.com</a>
+        </alert>
+        <alert type="danger">
+          Alert of type "danger". <a href="http://www.danger.com" class="alert-link"> danger.com</a>
+          <br>
+          <div class="alert-heading">Danger.com Info:</div>
+          <p class="mb-0">This is a dangerous site.</p>
+        </alert>
+
+        <b class="alert-heading"> Dismissable alerts: </b>
+        <div *ngFor="let alert of defaultAlerts">
+          <alert [type]=alert.type [dismissible]="dismissible" [dismissOnTimeout]=alert.timeout>
+            <!-- (onClosed)="onClosed(alert) method could be implemented in the class. But it's not needed.
+            if dismissible property defined then alerts will have close buttons. -->
+            {{alert.msg}} &lt;- This messge will self-distruct in <b>{{ alert.timeout / 1000}}</b> seconds.
+            {{alert.addedon}}
+          </alert>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
